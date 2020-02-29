@@ -27,27 +27,12 @@ $("#wins").text(wins);
 
 $("#losses").text(losses);
 
-//reset
-function reset(){
-    targetNumber= Math.floor(Math.random ()*101)+ 19;
-    $("#targetNumber").text(targetNumber);
-    blueCrystal = Math.floor(Math.random()*11)+ 1;
-
-    purpleCrystal = Math.floor(Math.random()*11)+ 1;
-
-    silverCrystal = Math.floor(Math.random()*11)+ 1;
-
-    yellowCrystal = Math.floor(Math.random ()*11)+ 1;
-    totalScore=0;
-    $("#totalScore").text(totalScore);
-
-}
-
 //click function for each crystal
 
 $("#blueCrystal").on('click', function(){
     totalScore= totalScore + blueCrystal;
     $("#totalScore").text(totalScore)
+    //condition
     if (totalScore == targetNumber){
         wins++;
         $("#wins").text(wins);
@@ -63,6 +48,7 @@ $("#blueCrystal").on('click', function(){
 $("#purpleCrystal").on('click', function(){
     totalScore= totalScore + purpleCrystal;
     $("#totalScore").text(totalScore)
+    //condition
     if (totalScore == targetNumber){
         wins++;
         $("#wins").text(wins);
@@ -78,6 +64,8 @@ $("#purpleCrystal").on('click', function(){
 $("#silverCrystal").on('click', function(){
     totalScore= totalScore + silverCrystal;
     $("#totalScore").text(totalScore)
+
+    //condition
     if (totalScore == targetNumber){
         wins++;
         $("#wins").text(wins);
@@ -93,6 +81,8 @@ $("#silverCrystal").on('click', function(){
 $("#yellowCrystal").on('click', function(){
     totalScore= totalScore + yellowCrystal;
     $("#totalScore").text(totalScore)
+
+    //condition
     if (totalScore == targetNumber){
         wins++;
         $("#wins").text(wins);
@@ -104,6 +94,21 @@ $("#yellowCrystal").on('click', function(){
         reset()
     }
 });
+
+//reset
+function reset(){
+    targetNumber= Math.floor(Math.random ()*101)+ 19;
+    $("#targetNumber").text(targetNumber);
+    
+    blueCrystal = Math.floor(Math.random()*11)+ 1;
+    purpleCrystal = Math.floor(Math.random()*11)+ 1;
+    silverCrystal = Math.floor(Math.random()*11)+ 1;
+    yellowCrystal = Math.floor(Math.random ()*11)+ 1;
+    
+    totalScore=0;
+    $("#totalScore").text(totalScore);
+
+}
 
 
 
